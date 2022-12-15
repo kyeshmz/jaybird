@@ -37,6 +37,12 @@ dependencies:
 
   flutter_hooks: ^0.18.5+1
   flutter_inappwebview: ^5.7.2+2
+  permission_handler: ^10.2.0
+  wakelock: ^0.6.2
+  hooks_riverpod: ^2.1.1
+  flutter_riverpod: ^2.0.2
+  riverpod_annotation: ^1.0.4
+  connectivity_plus: ^3.0.2
 
 dev_dependencies:
   flutter_test:
@@ -48,6 +54,8 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  build_runner:
+  riverpod_generator: ^1.0.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
