@@ -1,0 +1,32 @@
+name: android_cicd
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - run: ls -la
+      - uses: subosito/flutter-action@v2.8.0
+        with:
+          channel: "stable"
+      - uses: actions/checkout@v3
+      - name: flutter pub get
+        run: flutter pub get
+      - name: Build APK
+        run: flutter build apk --release --build-number=$GITHUB_RUN_NUMBER
+  build-ios:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+          cache: true
+          architecture: x64
+      - run: flutter pub get
+      - run: flutter build ipa

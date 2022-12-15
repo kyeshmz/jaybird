@@ -47,7 +47,7 @@ class _MyAppState extends State<MyApp> {
               child: InAppWebView(
                 key: webViewKey,
                 initialUrlRequest:
-                URLRequest(url: WebUri("https://github.com/flutter")),
+                    URLRequest(url: WebUri("https://github.com/flutter")),
                 initialSettings: InAppWebViewSettings(
                     allowsBackForwardNavigationGestures: true),
                 onWebViewCreated: (controller) {
