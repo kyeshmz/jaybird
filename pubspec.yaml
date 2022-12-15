@@ -39,10 +39,19 @@ dependencies:
   flutter_inappwebview: ^5.7.2+2
   permission_handler: ^10.2.0
   wakelock: ^0.6.2
-  hooks_riverpod: ^2.1.1
-  flutter_riverpod: ^2.0.2
-  riverpod_annotation: ^1.0.4
+
   connectivity_plus: ^3.0.2
+  firebase_analytics: ^10.0.7
+  firebase_crashlytics: ^3.0.7
+  firebase_core: ^2.4.0
+  flutter_native_splash: 2.2.16
+  screen_brightness: 0.2.2
+  hooks_riverpod: 2.1.1
+  http: 0.13.5
+
+  battery_plus: 3.0.2
+  network_info_plus: 3.0.1
+  device_info_plus: 8.0.0
 
 dev_dependencies:
   flutter_test:
@@ -54,8 +63,12 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
-  build_runner:
-  riverpod_generator: ^1.0.4
+  import_sorter: ^4.6.0
+  pedantic_mono: any
+  freezed: ^2.1.0+1
+  freezed_annotation: 2.2.0
+  json_serializable: ^6.0.1
+  build_runner: ^2.1.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -97,3 +110,5 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_native_splash:
+  color: "#42a5f5"
