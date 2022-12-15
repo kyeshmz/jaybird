@@ -1,6 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:pochi/repositories/network/network_repository_impl.dart';
-import 'package:pochi/state/network_state/network_state.dart';
+
+import '../../repositories/network/network_repository_impl.dart';
+import 'network_state.dart';
 
 class NetworkStateController extends StateNotifier<NetworkState> {
   NetworkStateController(this.ref)

@@ -4,8 +4,8 @@
 import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
-
 // Project imports:
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'connectivity_state.freezed.dart';
 

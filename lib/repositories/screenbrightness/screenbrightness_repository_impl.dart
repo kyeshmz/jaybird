@@ -7,9 +7,7 @@ import 'package:screen_brightness/screen_brightness.dart';
 part 'screenbrightness_repository_impl.freezed.dart';
 
 @freezed
-class ScreenBrightnessRepositoryImpl
-    with _$ScreenBrightnessRepositoryImpl
-    implements ScreenBrightnessRepository {
+class ScreenBrightnessRepositoryImpl with _$ScreenBrightnessRepositoryImpl {
   const factory ScreenBrightnessRepositoryImpl({
     required ScreenBrightness screenBrightness,
   }) = _ScreenBrightnessRepositoryImpl;

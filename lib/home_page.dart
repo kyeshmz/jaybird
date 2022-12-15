@@ -1,9 +1,11 @@
 import 'dart:io';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:jaybird/consts.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:wakelock/wakelock.dart';
@@ -24,9 +26,7 @@ class HomePage extends HookWidget {
     final isConnected = useState(true);
     useEffect(() {
       final deviceInfo = DeviceInfoPlugin();
-      if (Platform.isAndroid) {
-        deviceInfo.androidInfo
-      }
+      if (Platform.isAndroid) {}
 
       FlutterNativeSplash.remove();
       Connectivity().onConnectivityChanged.listen((ConnectivityResult result) {
