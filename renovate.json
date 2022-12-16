@@ -1,0 +1,24 @@
+{
+	"extends": ["config:base"],
+	"timezone": "Asia/Tokyo",
+	"enabledManagers": ["npm", "pub", "asdf"],
+	"lockFileMaintenance": {
+		"enabled": true
+	},
+	"dependencyDashboard": false,
+	"schedule": ["every 1 hour after 00:00 and before 23:59 every day"],
+	"packageRules": [
+		{
+			"matchDepTypes": ["dependencies"],
+			"groupName": "dependencies",
+			"rangeStrategy": "pin"
+		},
+		{
+			"matchDepTypes": ["devDependencies"],
+			"groupName": "devDependencies",
+			"rangeStrategy": "update-lockfile"
+		}
+	],
+	"baseBranches": ["main", "master"],
+	"assignees": ["kyeshmz"]
+}
