@@ -1,5 +1,3 @@
-import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -27,8 +25,5 @@ Future main() async {
 
   await SystemChrome.setPreferredOrientations(deviceOrienations);
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-  runApp(ProviderScope(
-      child: DevicePreview(
-          enabled: kIsWeb,
-          builder: (context) => MaterialApp(home: HomePage()))));
+  runApp(ProviderScope(child: MaterialApp(home: HomePage())));
 }

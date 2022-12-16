@@ -264,14 +264,14 @@ packages:
       name: flutter_hooks
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.18.5+1"
+    version: "0.18.5"
   flutter_inappwebview:
     dependency: "direct main"
     description:
       name: flutter_inappwebview
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.4.3+7"
+    version: "5.7.2+3"
   flutter_lints:
     dependency: "direct dev"
     description:
