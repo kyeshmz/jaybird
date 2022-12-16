@@ -21,9 +21,6 @@ Some key features are:
 
 ## Usage
 
-If enabling with Firebase, we need to enable the Firebase project via Firebase CLI and Flutterfire.
-More about this can be found [here]()
-
 If not, we can start by setting the consts
 
 ## Deployment
@@ -35,3 +32,8 @@ Debugging and other mishaps should be done with:
 1. Analytics (An event is pushed with the current package info on Start)
 2. Deploying a new version
 3. Fixing the URL side of things
+
+## Extending
+
+If enabling with Firebase, we need to enable the Firebase project via Firebase CLI and Flutterfire.
+More about this can be found [here]()

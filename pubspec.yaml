@@ -41,8 +41,7 @@ dependencies:
   wakelock: ^0.6.2
 
   connectivity_plus: ^3.0.2
-  firebase_crashlytics: ^3.0.7
-  firebase_core: ^2.4.0
+
   flutter_native_splash: 2.2.16
   screen_brightness: 0.2.2
   hooks_riverpod: 2.1.1
@@ -73,6 +72,7 @@ dev_dependencies:
   json_serializable: ^6.0.1
   build_runner: ^2.1.4
   riverpod_generator: ^1.0.4
+  device_preview: ^1.1.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
