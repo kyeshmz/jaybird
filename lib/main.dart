@@ -8,6 +8,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:jaybird/consts.dart';
 import 'package:jaybird/home_page.dart';
 
+import 'firebase_options.dart';
+
 Future main() async {
   final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
 
@@ -26,7 +28,6 @@ Future main() async {
   FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
 
   await SystemChrome.setPreferredOrientations(deviceOrienations);
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-  runApp(ProviderScope(child: HomePage()));
+  runApp(ProviderScope(child: MaterialApp(home: HomePage())));
 }

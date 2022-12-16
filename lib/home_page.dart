@@ -1,16 +1,15 @@
-import 'dart:io';
-
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:jaybird/consts.dart';
+import 'package:jaybird/repositories/slack/slack_repository_impl.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:wakelock/wakelock.dart';
 
-class HomePage extends HookWidget {
+class HomePage extends HookConsumerWidget {
   HomePage({Key? key}) : super(key: key);
 
   final GlobalKey webViewKey = GlobalKey();
@@ -22,12 +21,22 @@ class HomePage extends HookWidget {
   PullToRefreshController? pullToRefreshController;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final isConnected = useState(true);
-    useEffect(() {
-      final deviceInfo = DeviceInfoPlugin();
-      if (Platform.isAndroid) {}
+    final appLifeCycle = useAppLifecycleState();
 
+    useEffect(() {
+      if (appLifeCycle == AppLifecycleState.resumed) {
+        ref.read(slackRepositoryProvider).sendStartup();
+      }
+      if (appLifeCycle == AppLifecycleState.inactive ||
+          appLifeCycle == AppLifecycleState.detached) {
+        ref.read(slackRepositoryProvider).sendError();
+      }
+      return null;
+    }, [appLifeCycle]);
+
+    useEffect(() {
       FlutterNativeSplash.remove();
       Connectivity().onConnectivityChanged.listen((ConnectivityResult result) {
         // Got a new connectivity status!
@@ -42,12 +51,9 @@ class HomePage extends HookWidget {
           Permission.storage,
         ].request();
         var connectivityResult = await (Connectivity().checkConnectivity());
-        if (connectivityResult == ConnectivityResult.mobile) {
+        if (connectivityResult == ConnectivityResult.none) {
           // I am connected to a mobile network.
-        } else if (connectivityResult == ConnectivityResult.wifi) {
-          // I am connected to a wifi network.
         }
-        // for each Ad URL filter, add a Content Blocker to block its loading.
       });
 
       for (final adUrlFilter in adUrlFilters) {

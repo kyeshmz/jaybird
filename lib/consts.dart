@@ -23,5 +23,7 @@ final webViewUrl = Uri.parse("https://github.com/flutter");
 // DeviceOrientation.landscapeLeft (meaning that the volume is on top)
 // or
 // DeviceOrientation.portraitUp (meaning that the lock button is on top)
-final deviceOrienations = [DeviceOrientation.landscapeLeft];
-final slackWebHookURL = Uri.parse('');
+// final deviceOrienations = [DeviceOrientation.landscapeLeft];
+final deviceOrienations = [DeviceOrientation.portraitUp];
+const slackToken = '';
+const slackChannel = '';
