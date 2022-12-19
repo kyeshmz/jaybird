@@ -24,6 +24,13 @@ Future main() async {
   // FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
 
   await SystemChrome.setPreferredOrientations(deviceOrienations);
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+  ));
+  // await SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+  //     overlays: [SystemUiOverlay.top]);
+  await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+  // SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(ProviderScope(child: MaterialApp(home: HomePage())));
 }
