@@ -29,8 +29,9 @@ Future main() async {
   ));
   // await SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
   //     overlays: [SystemUiOverlay.top]);
-  await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-  // SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+  // await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(ProviderScope(child: MaterialApp(home: HomePage())));
 }
