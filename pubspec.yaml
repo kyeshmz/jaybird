@@ -55,6 +55,7 @@ dependencies:
   package_info_plus: 3.0.2
   slack_notifier: 1.2.0
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

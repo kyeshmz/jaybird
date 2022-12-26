@@ -5,6 +5,7 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:jaybird/consts.dart';
+import 'package:jaybird/repositories/screenbrightness/screenbrightness_repository_impl.dart';
 import 'package:jaybird/repositories/slack/slack_repository_impl.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:wakelock/wakelock.dart';
@@ -45,6 +46,10 @@ class HomePage extends HookConsumerWidget {
         }
       });
       Future.microtask(() async {
+        await ref
+            .watch(screenBrightnessRepositoryImplProvider)
+            .setScreenBrightness(1);
+
         await Wakelock.enable();
         Map<Permission, PermissionStatus> statuses = await [
           Permission.location,
