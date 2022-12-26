@@ -15,6 +15,8 @@ Some key features are:
 - Opinionated of how apps are managed:
   - Disallowing zoom
   - No gesture for going to and from pages
+  - Set screen brightness to max
+  - Disable system main bar and bottom bar
   - Clearing cache on restart
   - Allowing for mic and camera usage from inside Webview for WebRTC stuff.
   - No overscroll and removing all safe browsing etc.
@@ -22,6 +24,18 @@ Some key features are:
 ## Usage
 
 If not, we can start by setting the consts
+
+
+```
+
+final webViewUrl = Uri.parse("https://excalidraw.com/");
+final deviceOrienations = [DeviceOrientation.portraitUp];
+const slackToken = '';
+const slackChannel = '';
+
+
+```
+
 
 ## Deployment
 
@@ -37,3 +51,8 @@ Debugging and other mishaps should be done with:
 
 If enabling with Firebase, we need to enable the Firebase project via Firebase CLI and Flutterfire.
 More about this can be found [here]()
+
+
+## More options in acccessibility
+Set accessibility options to only use this app and remove lock
+

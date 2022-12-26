@@ -10,6 +10,8 @@ Future main() async {
   final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
 
   await SystemChrome.setPreferredOrientations(deviceOrienations);
+  await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(ProviderScope(child: MaterialApp(home: HomePage())));
 }
