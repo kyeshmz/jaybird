@@ -18,7 +18,7 @@ final adUrlFilters = [
 bool isFirebaseEnabled = false;
 
 // include https://
-final webViewUrl = Uri.parse("https://github.com/flutter");
+final webViewUrl = Uri.parse("https://excalidraw.com/");
 // this value should either be
 // DeviceOrientation.landscapeLeft (meaning that the volume is on top)
 // or

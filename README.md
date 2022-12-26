@@ -1,4 +1,4 @@
-<img src="./docs/aa.png" width="200">
+<img src="./docs/icon.png" width="200">
 
 # jaybird
 
