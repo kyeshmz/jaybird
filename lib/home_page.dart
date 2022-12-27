@@ -52,6 +52,8 @@ class HomePage extends HookConsumerWidget {
 
         await Wakelock.enable();
         Map<Permission, PermissionStatus> statuses = await [
+          Permission.camera,
+          Permission.microphone,
           Permission.location,
           Permission.storage,
         ].request();
@@ -86,39 +88,44 @@ class HomePage extends HookConsumerWidget {
     return Scaffold(
         body: SafeArea(
       child: InAppWebView(
-        key: webViewKey,
-        initialOptions: InAppWebViewGroupOptions(
-            crossPlatform: InAppWebViewOptions(
-                clearCache: true,
-                disableContextMenu: true,
-                supportZoom: false,
-                javaScriptCanOpenWindowsAutomatically: true,
-                mediaPlaybackRequiresUserGesture: false,
-                allowFileAccessFromFileURLs: true,
-                allowUniversalAccessFromFileURLs: true,
-                contentBlockers: contentBlockers),
-            android: AndroidInAppWebViewOptions(
-                clearSessionCache: true,
-                safeBrowsingEnabled: false,
-                builtInZoomControls: false),
-            ios: IOSInAppWebViewOptions(
-              disallowOverScroll: true,
-              ignoresViewportScaleLimits: true,
-              isDirectionalLockEnabled: true,
-              allowsLinkPreview: false,
-              disableLongPressContextMenuOnLinks: true,
-              disableInputAccessoryView: true,
-              isFraudulentWebsiteWarningEnabled: false,
-              allowsAirPlayForMediaPlayback: false,
-              allowsBackForwardNavigationGestures: false,
-              allowsInlineMediaPlayback: true,
-              allowsPictureInPictureMediaPlayback: false,
-            )),
-        initialUrlRequest: URLRequest(url: webViewUrl),
-        onWebViewCreated: (controller) {
-          webViewController = controller;
-        },
-      ),
+          key: webViewKey,
+          initialOptions: InAppWebViewGroupOptions(
+              crossPlatform: InAppWebViewOptions(
+                  clearCache: true,
+                  disableContextMenu: true,
+                  supportZoom: false,
+                  javaScriptCanOpenWindowsAutomatically: true,
+                  mediaPlaybackRequiresUserGesture: false,
+                  allowFileAccessFromFileURLs: true,
+                  allowUniversalAccessFromFileURLs: true,
+                  contentBlockers: contentBlockers),
+              android: AndroidInAppWebViewOptions(
+                  clearSessionCache: true,
+                  useHybridComposition: true,
+                  safeBrowsingEnabled: false,
+                  builtInZoomControls: false),
+              ios: IOSInAppWebViewOptions(
+                disallowOverScroll: true,
+                ignoresViewportScaleLimits: true,
+                isDirectionalLockEnabled: true,
+                allowsLinkPreview: false,
+                disableLongPressContextMenuOnLinks: true,
+                disableInputAccessoryView: true,
+                isFraudulentWebsiteWarningEnabled: false,
+                allowsAirPlayForMediaPlayback: false,
+                allowsBackForwardNavigationGestures: false,
+                allowsInlineMediaPlayback: true,
+                allowsPictureInPictureMediaPlayback: false,
+              )),
+          initialUrlRequest: URLRequest(url: webViewUrl),
+          onWebViewCreated: (controller) {
+            webViewController = controller;
+          },
+          androidOnPermissionRequest: (controller, origin, resources) async {
+            return PermissionRequestResponse(
+                resources: resources,
+                action: PermissionRequestResponseAction.GRANT);
+          }),
     ));
   }
 }

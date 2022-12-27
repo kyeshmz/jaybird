@@ -27,13 +27,10 @@ If not, we can start by setting the consts
 
 
 ```
-
 final webViewUrl = Uri.parse("https://excalidraw.com/");
 final deviceOrienations = [DeviceOrientation.portraitUp];
 const slackToken = '';
 const slackChannel = '';
-
-
 ```
 
 
@@ -56,3 +53,12 @@ More about this can be found [here]()
 ## More options in acccessibility
 Set accessibility options to only use this app and remove lock
 
+
+
+## The case for webview instead of PWA
+<!-- https://www.tablesgenerator.com/markdown_tables -->
+|         	| native printing         	| Documentation                                                                                         	| Updating                                                                                      	| Development                                              	|
+|---------	|-------------------------	|-------------------------------------------------------------------------------------------------------	|-----------------------------------------------------------------------------------------------	|----------------------------------------------------------	|
+| pwa     	| yes (based on versions) 	| iOS seems to have some undocumented functions between versions (see https://firt.dev/notes/pwa-ios/ ) 	| Requires updating the link with redirect                                                      	| Need to adhere to PWA rules of platform (manifest, etc.) 	|
+| webview 	| yes                     	| More straightforward than pwa                                                                         	| Can update app via TestFlight or other distribution for native or redirect inside the webview 	| Webview are more loosely integratable                    	|
+|         	|                         	|                                                                                                       	|                                                                                               	|                                                          	|
