@@ -10,6 +10,9 @@ Future main() async {
   final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
 
   await SystemChrome.setPreferredOrientations(deviceOrienations);
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+  ));
   await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
 
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);

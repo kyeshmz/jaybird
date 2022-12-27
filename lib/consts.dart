@@ -23,7 +23,7 @@ final webViewUrl = Uri.parse("https://excalidraw.com/");
 // DeviceOrientation.landscapeLeft (meaning that the volume is on top)
 // or
 // DeviceOrientation.portraitUp (meaning that the lock button is on top)
-// final deviceOrienations = [DeviceOrientation.landscapeLeft];
-final deviceOrienations = [DeviceOrientation.portraitUp];
+final deviceOrienations = [DeviceOrientation.landscapeRight];
+// final deviceOrienations = [DeviceOrientation.portraitUp];
 const slackToken = '';
 const slackChannel = '';
