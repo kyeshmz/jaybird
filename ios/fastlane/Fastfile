@@ -18,8 +18,21 @@ default_platform(:ios)
 platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :beta do
-    sh("bash ../../increment.sh")
+   increment() 
     build_app(workspace: "Runner.xcworkspace", scheme: "Runner")
     upload_to_testflight
   end
+    desc 'increment'
+    lane :increment do
+
+    sh("bash ../../increment.sh")
+    
+    cocoapods(
+        clean_install: true,
+        podfile: "./Podfile"
+    )
+
+    end
+
 end
+
