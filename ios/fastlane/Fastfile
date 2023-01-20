@@ -22,17 +22,19 @@ platform :ios do
     build_app(workspace: "Runner.xcworkspace", scheme: "Runner")
     upload_to_testflight
   end
-    desc 'increment'
+
+  desc 'increment'
     lane :increment do
 
-    sh("bash ../../increment.sh")
-    
-    cocoapods(
+      sh("bash ../../increment.sh")
+      
+      cocoapods(
         clean_install: true,
         podfile: "./Podfile"
-    )
+      )
 
     end
+
 
 end
 
