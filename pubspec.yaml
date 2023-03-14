@@ -42,10 +42,10 @@ dependencies:
 
   connectivity_plus: 3.0.3
 
-  flutter_native_splash: 2.2.18
+  flutter_native_splash: 2.2.19
   screen_brightness: 0.2.2
-  hooks_riverpod: 2.2.0
-  riverpod_annotation: 2.0.0
+  hooks_riverpod: 2.3.2
+  riverpod_annotation: 2.0.2
 
   http: 0.13.5
 
