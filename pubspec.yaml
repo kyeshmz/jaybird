@@ -44,8 +44,8 @@ dependencies:
 
   flutter_native_splash: 2.2.19
   screen_brightness: 0.2.2
-  hooks_riverpod: 2.3.3
-  riverpod_annotation: 2.0.3
+  hooks_riverpod: 2.3.4
+  riverpod_annotation: 2.0.4
 
   http: 0.13.5
 
