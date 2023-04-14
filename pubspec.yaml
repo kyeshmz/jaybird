@@ -40,7 +40,7 @@ dependencies:
   permission_handler: 10.2.0
   wakelock: 0.6.2
 
-  connectivity_plus: 3.0.3
+  connectivity_plus: 3.0.4
 
   flutter_native_splash: 2.2.19
   screen_brightness: 0.2.2
@@ -49,10 +49,10 @@ dependencies:
 
   http: 0.13.5
 
-  battery_plus: 3.0.3
-  network_info_plus: 3.0.2
-  device_info_plus: 8.1.0
-  package_info_plus: 3.0.3
+  battery_plus: 3.0.4
+  network_info_plus: 3.0.3
+  device_info_plus: 8.2.0
+  package_info_plus: 3.1.0
   slack_notifier: 1.2.0
 
 
