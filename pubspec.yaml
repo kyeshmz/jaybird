@@ -40,7 +40,7 @@ dependencies:
   permission_handler: 11.0.0
   wakelock: 0.6.2
 
-  connectivity_plus: 4.0.2
+  connectivity_plus: 5.0.1
 
   flutter_native_splash: 2.3.2
   screen_brightness: 0.2.2
